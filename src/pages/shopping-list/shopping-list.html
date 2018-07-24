@@ -13,7 +13,8 @@
           name="ingredientName"
           placeholder="Milk"
           ngModel
-          >
+          required
+        >
         </ion-input>
       </ion-item>
       
@@ -24,10 +25,17 @@
           name="amount"
           placeholder="2"
           ngModel
-          >
+          required
+        >
         </ion-input>
       </ion-item>
     </ion-list>
-    <button ion-button type="submit" block>Add</button>
+    <button 
+      ion-button 
+      type="submit" 
+      block
+      [disabled]="!f.valid"
+    >Add
+    </button>
   </form>
 </ion-content>
