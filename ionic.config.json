@@ -1,0 +1,8 @@
+{
+  "name": "ionic-recipe-book",
+  "app_id": "9b8f6cd7",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
