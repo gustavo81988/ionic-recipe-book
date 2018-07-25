@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
 import { ShoppingListService } from '../../services/shopping-list';
+import { Ingredient } from '../../models/ingredient';
 
 @IonicPage()
 
@@ -12,11 +13,22 @@ import { ShoppingListService } from '../../services/shopping-list';
 
 export class ShoppingListPage {
 
+  listItems: Ingredient[];
+
   constructor(private slService: ShoppingListService){}
 
+  ionViewWillEnter(){
+    this.loadItems();
+  }
+
   onAddItem(form: NgForm){
-    this.slService.addItem(form.value.ingridientName, form.value.amount);
+    this.slService.addItem(form.value.ingredientName, form.value.amount);
     form.reset();
+    this.loadItems();
+  }
+
+  private loadItems(){
+    this.listItems = this.slService.getItems();
   }
 
 }
