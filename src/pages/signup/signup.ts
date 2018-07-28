@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the SignupPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage } from 'ionic-angular';
+import { NgForm } from '@angular/forms';
 
 @IonicPage()
 @Component({
@@ -14,12 +8,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'signup.html',
 })
 export class SignupPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  onSignup(form: NgForm){
+    console.log(form.value);
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SignupPage');
-  }
-
 }
